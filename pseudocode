@@ -1,0 +1,263 @@
+Tax Problem with FUnction
+
+module( )
+	//Declare the variables 
+	Declare Real tipAmount
+	Declare Real taxAmount
+	Declare Real withTax
+	Declare Real totalAmount
+	Declare Real chargeAmount
+
+	Call getChargeAmount(chargeAmount)
+	Call calcTaxAmount(taxAmount, chargeAmount)
+	Call calcWithTax(withTax, chargeAmount, taxAmount)
+	Call calcTipAmount(tipAmount, withTax)
+	Call calcTotalAmount(totalAmount, tipAmount, withTax)
+	Call displayOutput(tax, taxAmount, tip, tipAmount, totalAmount)
+End Module
+
+Module getChargeAmount(chargeAmount)
+	Display “Enter charge of food:“
+	Input chargeAmount
+End Module 
+
+
+Module calcTaxAmount(taxAMount, chargeAmount)
+	Set tax = 0.07
+	Set taxAmount = chargeAmount * tax
+End Module
+
+
+Module calcWithTax(withTax, chargeAmount, taxAmount)
+	Set tax = 0.07
+	Set withTax = chargeAmount + taxAmount
+End Module
+
+
+Module calcTipAmount(tipAmount, withTax)
+	Set tip = 0.15
+	Set tipAmount = withTax * tip
+End Module
+
+
+Module calcTotalAmount(totalAmount, tipAmount, withTax)
+	Set totalAmount = tipAmount + withTax
+End Module
+
+
+Module displayOutput(taxAmount, tipAmount, totalAmount)
+	Set tax = 0.07
+	Set tip = 0.15
+	Display “With the sales tax of “, tax, “ you will pay:”, taxAmount, “ in tax.”
+	Display “With the tip of “, tip, “ you will pay:”, tipAmount, “ in tip.”
+	Display “In total, you will pay:”, totalAmount, “for your meal.”
+End Module
+
+
+
+
+
+
+
+
+
+
+
+
+//New Pseudocode
+
+main()
+
+    //Declare Viariables
+    declare originalAmount
+    declare tip = .15
+    declare tipAmount
+    declare tax = .07
+    declare taxAmount
+    declare withTax
+    declare totalAmount
+
+    call getChargeAmount(Ref Real originalAmount)
+    call calcTaxAmount(Real originalAmount, Real tax, Ref Real taxAmount)
+    call calcWithTax(Real originalAmount, Real taxAmount, Ref Real withTax)
+    call calcTipAmount(Real withTax, Real tip, Ref Real tipAmount)
+    call calcTotalAmount(Real withTax, Real tipAmount, Ref Real totalAmount)
+    call cleanTip(Ref tip)
+    call cleanTax(Ref tax)
+    call displayOutput(Real tip, Real tax, Real taxAmount, Real tipAmount, Real totalAmount)
+
+End Module
+
+
+Module getChargeAmount
+    Display ("Input charge of food")
+    Input originalAmount
+End Module
+
+Module calcTaxAmount(Real originalAmount, Real tax, Ref Real taxAmount)
+    set taxAmount = originalAmount * tax
+    return taxAmount
+End Module
+
+Module calcWithTax(Real originalAmount, Real taxAmount, Ref Real withTax)
+    set withTax = originalAmount + taxAmount
+    return withTax
+End Module
+
+Module calcTipAmount(Real withTax, Real tip, Ref Real tipAmount)
+    set tipAmount = withTax * tip
+    return tipAmount
+End Module
+
+Module calcTotalAmount(Real withTax, Real tipAmount, Ref Real totalAmount)
+    set totalAmount = withTax + tipAmount
+    return totalAmount
+End Module
+
+Module cleanTip(Ref tip)
+    set tip = tip * 100
+    return tip
+End Module
+
+Module cleanTax(Ref tax)
+    set tax = tax * 100
+    return tax
+End Module
+
+Module displayOutput(Real tip, Real tax, Real taxAmount, Real tipAmount, Real totalAmount)
+    Display “With the sales tax of “, tax, “ you will pay:”, taxAmount, “ in tax.”
+	Display “With the tip of “, tip, “ you will pay:”, tipAmount, “ in tip.”
+	Display “In total, you will pay:”, totalAmount, “for your meal.”
+End Module
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function main()
+// {
+//     var tipAmount;
+//     var taxAmount;
+//     var withTax;
+//     var totalAmount;
+//     var chargeAmount;
+//     var showTip;
+//     var showTax;
+//     var taAmount;
+//     var tiAmount;
+//     var toAmount;
+//     var tip = .15
+//     var tax = .07
+
+//     chargeAmount = getChargeAmount(chargeAmount);
+//     taxAmount = calcTaxAmount(taxAmount, chargeAmount, tip);
+//     withTax = calcWithTax(withTax, chargeAmount, taxAmount);
+//     tipAmount = calcTipAmount(tipAmount, withTax, tip);
+//     totalAmount = calcTotalAmount(totalAmount, tipAmount, withTax);
+
+//     showTip = cleanOutput(tip, showTax, tax, taAmount, taxAmount, tiAmount, tipAmount, toAmount, totalAmount);
+//     showTax = cleanOutput(tip, showTax, tax, taAmount, taxAmount, tiAmount, tipAmount, toAmount, totalAmount);
+//     taAmount = cleanOutput(tip, showTax, tax, taAmount, taxAmount, tiAmount, tipAmount, toAmount, totalAmount);
+//     toAmount = cleanOutput(tip, showTax, tax, taAmount, taxAmount, tiAmount, tipAmount, toAmount, totalAmount);
+//     tiAmount = cleanOutput(tip, showTax, tax, taAmount, taxAmount, tiAmount, tipAmount, toAmount, totalAmount);
+//     displayOutput(taAmount, tiAmount, toAmount, showTip, showTax);
+// }
+
+// function getChargeAmount(chargeAmount)
+// {
+//     return chargeAmount = prompt("Enter charge of food:");
+// }
+
+// function calcTaxAmount(taxAmount, chargeAmount, tax)
+// {
+//     return taxAmount = chargeAmount * tax;
+// }
+
+// function calcWithTax(withTax, chargeAmount, taxAmount)
+// {
+//     return withTax = chargeAmount + taxAmount;
+// }
+
+// function calcTipAmount(tipAmount, withTax, tip)
+// {
+//     return tipAmount = withTax * tip;
+// }
+
+// function calcTotalAmount(totalAmount, tipAmount, withTax)
+// {
+//     return totalAmount = tipAmount * withTax;
+// }
+
+// function cleanOutput(showTip, showTax, taAmount, taxAmount, tiAmount, tipAmount, toAmount, totalAmount)
+// {
+//     tip = .15;
+//     tax = 0.07;
+//     return showTip = (tip*100);
+//     return showTax = (tax*100).toFixed(0);
+//     return taAmount = taxAmount;
+//     return tiAmount = tipAmount;
+//     return toAmount = totalAmount; 
+//     return taxAmount;
+//     return tipAmount;
+//     return totalAmount;
+// }
+
+// function displayOutput(taAmount, tiAmount, toAmount, showTip, showTax)
+// {
+//     alert("With the sales tax of " + showTax + "%" + " you will pay: $" + taAmount + " in tax." +
+//     "\nWith the tip of " + showTip + "%" + " you will pay: $" + tiAmount + " in tip."+
+//     "\nIn total, you will pay: " + "$" + toAmount + " for your meal.");    
+// }
+// main();
+
